@@ -29,11 +29,19 @@ public class ApplicationContextBasicBeanFindTest {
     }
 
     @Test
+    @DisplayName("find a bean by impl type and name")
+    void findBeanByImplTypeAndName() {
+        MemberService memberService = ac.getBean("memberService", MemberServiceImpl.class);
+        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+    }
+
+    @Test
     @DisplayName("find a bean by impl type")
     void findBeanByImplType() {
         MemberService memberService = ac.getBean(MemberServiceImpl.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
+
 
     @Test
     @DisplayName("find a bean by not existing name")
