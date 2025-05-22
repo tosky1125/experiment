@@ -17,4 +17,14 @@ public class SingletonTest {
         MemberService memberService2 = appConfig.memberService();
         assertThat(memberService).isNotSameAs(memberService2);
     }
+
+
+    @Test
+    @DisplayName("Singleton Service Test")
+    void singletonPatternInstanceUsage() {
+        SingletonService singletonService = SingletonService.getInstance();
+        SingletonService singletonService2 = SingletonService.getInstance();
+        assertThat(singletonService).isInstanceOf(SingletonService.class);
+        assertThat(singletonService).isSameAs(singletonService2);
+    }
 }
