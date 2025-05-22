@@ -5,6 +5,8 @@ import hello.core.member.MemberService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class SingletonTest {
 
     @Test
@@ -13,8 +15,6 @@ public class SingletonTest {
         AppConfig appConfig = new AppConfig();
         MemberService memberService = appConfig.memberService();
         MemberService memberService2 = appConfig.memberService();
-
-        System.out.println(memberService);
-        System.out.println(memberService2);
+        assertThat(memberService).isNotSameAs(memberService2);
     }
 }
