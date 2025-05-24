@@ -20,7 +20,7 @@ public class SingletonTest {
 
 
     @Test
-    @DisplayName("Singleton Service Test")
+    @DisplayName("Singleton    Service Test")
     void singletonPatternInstanceUsage() {
         SingletonService singletonService = SingletonService.getInstance();
         SingletonService singletonService2 = SingletonService.getInstance();
